@@ -1,2 +1,2 @@
-# darlehensrechner
+# Darlehensrechner
 Rechner für Annuitätendarlehen
