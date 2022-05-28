@@ -47,10 +47,10 @@ while schulden > 0:				# while-Schleife bis es keine Schulden mehr gibt
 	if tilgung < 0:				# Sonderfall zu geringe Zahlungsrate
 		print("[!] Zahlungsrate zu gering: Zins übersteigt Zahlungsrate.")
 		exit(1)
-	if schulden < zahlung:			# Sonderfall letztes Jahr, komplette Tilgung
-		zahlung = schulden		# Zahlung maximal so viel wie Restkredit
-		tilgung = zahlung - zins	# Tilgungsanteil entsprechend anpassen
-	schulden -= zahlung			# Restkredit für nächstes Jahr berechnen
+	if schulden < tilgung:			# Sonderfall letztes Jahr, komplette Tilgung
+		schulden = 0
+	else:
+		schulden -= tilgung		# Restkredit für nächstes Jahr berechnen
 	
 	# Werte ausgeben alle $skip Jahre und immer das erste und letzte Jahr
 	if skip == 1 or jahre % skip == 1 or schulden == 0:
