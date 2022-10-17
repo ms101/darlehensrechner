@@ -10,6 +10,7 @@ import locale
 
 
 kredit = 150					# Darlehen in Tausend €
+kredit *= 1000				
 sollzins = 2.00					# Sollzins in % pro Jahr
 zahlung = 7500					# Zahlungsrate bzw. Annuität (Tilgung und Zins) pro Jahr
 sondertilgung = 7500				# jährliche Sondertilgung, gezahlt im Januar eines Jahres, oft 5 % vom kredit
@@ -19,7 +20,7 @@ graphZeigen = False				# Graph ausgeben (True oder False)
 
 if graphZeigen:
 	import matplotlib.pyplot as plot
-schulden = kredit * 1000			# restliche Schulden, Anfangswert ist der Kredit Faktor Tausend
+schulden = kredit				# restliche Schulden, Anfangswert ist der Kredit Faktor Tausend
 ezins = (1 + sollzins/zperiode) ** zperiode -1	# effektiver Jahreszins bei monatlicher Zahlung
 tilgung = 0					# berechneter Tilgungsanteil je Monat
 jahre = 0					# berechnete Gesamtlaufzeit
